@@ -24,10 +24,15 @@ $fonte-icones: 'FontAwesome';
 	margin-left: auto;
 	padding-left: 10px;
 	padding-right: 10px;
+
+	@media (max-width: 1110px) {
+		width: 100%;
+	}
 }
 
 @mixin tam-conteudo() {
-	width: 740px;
+	max-width: 740px;
+	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 10px;
@@ -58,6 +63,10 @@ body {
 	font-family: $fonte-texto;
 	font-weight: normal;
 	color: $cor1;
+
+	@media (max-width: 880px) {
+		font-size: 16px;
+	}
 }
 
 a, a:link, a:hover, a:active, a:focus {
@@ -71,6 +80,7 @@ h1 {font-size: 33px; color: $cor3}
 ////////////////////////////////////// CABECALHO
 .cabecalho {
 	width: 100%;
+	margin-bottom: 40px;
 	background: url('../img/bg.jpg') no-repeat center center / cover;
 	border-bottom: 10px solid $cor2;
 
@@ -87,7 +97,7 @@ h1 {font-size: 33px; color: $cor3}
 			* { font-weight: normal; margin: 0;}
 			h1 {
 				font-family: $fonte-titulos; 
-				letter-spacing: 0.06em;
+				letter-spacing: 0.075em;
 				color: inherit;
 			}
 			h2 {
@@ -99,7 +109,54 @@ h1 {font-size: 33px; color: $cor3}
 
 		.marca {
 			@include align-self(flex-end);
-			width: 220px;
+			
+			img {
+				width: 220px; 
+				margin: 0 auto;
+				text-align: center;
+				display: block;
+			}
+		}
+
+		@media (max-width: 1110px) {
+			.marca {
+				@include order(1);
+				width: 100%;
+			}
+
+			.titulo {
+				@include order(2);
+				width: 100%;
+				text-align: center;
+
+				h1 {font-size: 30px;}
+				h2 {font-size: 16px;}
+			}
+		}
+
+		@media (max-width: 880px) {
+			min-height: 180px;
+			height: auto;
+
+			.marca {
+				margin-bottom: 20px;
+				img {width: 180px;}
+			}
+
+			.titulo {
+				h1 {font-size: 22px;}
+			}
+		}
+
+		@media (max-width: 580px) {
+			.marca {
+				margin-bottom: 10px;
+			}
+			.titulo {
+				h1, h2 {
+					span {display: none !important;}
+				}
+			}
 		}
 	}
 }
@@ -149,10 +206,16 @@ h1 {font-size: 33px; color: $cor3}
 		ol {
 			& > li:before {
 				counter-increment: section;
-				content: counter(section) ")";
+				content: counter(section) ".";
 			}
 		}
+
+		@media (max-width: 1110px) {
+			display: none;
+		}
 	}
+
+
 
 	.conteudo {
 		@include tam-conteudo();
@@ -280,7 +343,7 @@ main {
 		font-family: $fonte-titulos;
 		color: $cor3;
 		z-index: 2;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.075em;
 
 		a {
 			position: relative;

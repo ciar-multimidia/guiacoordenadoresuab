@@ -420,6 +420,9 @@ body {
   font-family: "Roboto", serif;
   font-weight: normal;
   color: #222; }
+  @media (max-width: 880px) {
+    body {
+      font-size: 16px; } }
 
 a, a:link, a:hover, a:active, a:focus {
   color: #026a7e;
@@ -434,6 +437,7 @@ h1 {
 
 .cabecalho {
   width: 100%;
+  margin-bottom: 40px;
   background: url("../img/bg.jpg") no-repeat center center/cover;
   border-bottom: 10px solid #ec1066; }
   .cabecalho .container {
@@ -478,6 +482,9 @@ h1 {
     height: 270px;
     padding-top: 20px;
     padding-bottom: 20px; }
+    @media (max-width: 1110px) {
+      .cabecalho .container {
+        width: 100%; } }
     .cabecalho .container .titulo {
       color: #fff;
       -webkit-align-self: flex-end;
@@ -489,7 +496,7 @@ h1 {
         margin: 0; }
       .cabecalho .container .titulo h1 {
         font-family: "Anton", sans-serif;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.075em;
         color: inherit; }
       .cabecalho .container .titulo h2 {
         font-family: "Roboto", serif;
@@ -499,8 +506,51 @@ h1 {
       -webkit-align-self: flex-end;
       -moz-align-self: flex-end;
       align-self: flex-end;
-      -ms-flex-item-align: end;
-      width: 220px; }
+      -ms-flex-item-align: end; }
+      .cabecalho .container .marca img {
+        width: 220px;
+        margin: 0 auto;
+        text-align: center;
+        display: block; }
+    @media (max-width: 1110px) {
+      .cabecalho .container .marca {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        box-ordinal-group: 1;
+        -webkit-order: 1;
+        -moz-order: 1;
+        order: 1;
+        -ms-flex-order: 1;
+        width: 100%; }
+      .cabecalho .container .titulo {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        box-ordinal-group: 2;
+        -webkit-order: 2;
+        -moz-order: 2;
+        order: 2;
+        -ms-flex-order: 2;
+        width: 100%;
+        text-align: center; }
+        .cabecalho .container .titulo h1 {
+          font-size: 30px; }
+        .cabecalho .container .titulo h2 {
+          font-size: 16px; } }
+    @media (max-width: 880px) {
+      .cabecalho .container {
+        min-height: 180px;
+        height: auto; }
+        .cabecalho .container .marca {
+          margin-bottom: 20px; }
+          .cabecalho .container .marca img {
+            width: 180px; }
+        .cabecalho .container .titulo h1 {
+          font-size: 22px; } }
+    @media (max-width: 580px) {
+      .cabecalho .container .marca {
+        margin-bottom: 10px; }
+      .cabecalho .container .titulo h1 span, .cabecalho .container .titulo h2 span {
+        display: none !important; } }
 
 .wrap-conteudo {
   width: 1110px;
@@ -541,6 +591,9 @@ h1 {
   -o-justify-content: space-between;
   justify-content: space-between;
   -ms-flex-pack: justify; }
+  @media (max-width: 1110px) {
+    .wrap-conteudo {
+      width: 100%; } }
   .wrap-conteudo .navegacao {
     width: 330px;
     font-size: 0.85em; }
@@ -567,9 +620,13 @@ h1 {
       vertical-align: middle; }
     .wrap-conteudo .navegacao ol > li:before {
       counter-increment: section;
-      content: counter(section) ")"; }
+      content: counter(section) "."; }
+    @media (max-width: 1110px) {
+      .wrap-conteudo .navegacao {
+        display: none; } }
   .wrap-conteudo .conteudo {
-    width: 740px;
+    max-width: 740px;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     padding-left: 10px;
@@ -658,7 +715,7 @@ main {
     font-family: "Anton", sans-serif;
     color: #026a7e;
     z-index: 2;
-    letter-spacing: 0.05em; }
+    letter-spacing: 0.075em; }
     main h1 a, main h2 a, main h3 a, main h4 a, main h5 a {
       position: relative;
       color: inherit; }
@@ -696,6 +753,9 @@ main {
     margin-top: 100px;
     margin-bottom: 100px;
     border-collapse: collapse; }
+    @media (max-width: 1110px) {
+      main table {
+        width: 100%; } }
     main table.thead-fixo {
       background: #fff;
       position: fixed;
